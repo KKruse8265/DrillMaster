@@ -1,0 +1,4 @@
+//um nicht bei jedem neuen Pusch den Usernamen und das Passwort eingeben zu müssen gibt es verschiedene Möglichkeiten.
+//fürs erste soll einmal diese Version reichen, damit gibt man einmal beide Daten ein und muss es dann,
+//solange der User angemeldet bleibt nicht mehr erneut angeben
+git config credential.helper cache
