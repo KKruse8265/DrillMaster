@@ -1,6 +1,14 @@
 echo "Wichtige infos die unbedingt in eine Readme sollten" >> README.md
+//hier wird ein LOKALES git Repository erstellt. Dieses wird im aktuellen Verzeichniss unter .git/ verwaltet/gesichert
 git init
+//git add fügt eine Datei/ein Verzeichniss den zu comittenden (übertragenden) Dateien hinzu 
+//"git add ." fügt alles hinuzu was im Verzeichniss neu ist
 git add README.md
+//git commit überträgt alle via git add "ge-stagt-en" Dateien in das LOKALE Repository 
+//-m "Was auch immer" legt einen kommentar fest, besser nicht vergessen, kann auch gut sinvoll eingesetzt werden
 git commit -m "first commit"
+//hier wird ein REMOTE Reposirory hinzugefügt, es hat den Namen origin 
 git remote add origin https://github.com/MrChrisBee/test.git
+//schreibe den Inhalt des LOKALEN Repositorys in das REMOTE Repositorys 
 git push -u origin master
+
