@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <zoom_level>7</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>133</x>
+      <y>14</y>
+      <w>182</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Map&lt;K,V&gt;
+--
++clear():void
++containsKey(Object key):boolean
++containsValue(Object value):boolean
++entrySet():Set&lt;Map.Entry&lt;K,V&gt;&gt;
++equals(Object o):boolean
++get(Object key):V
++hashCode():int
++isEmpty():boolean
++keySet():Set(K)
++put(K key, V value):V
++putAll(Map&lt;? extends K,? extends V&gt; m):void
++remove(Object key):V
+(Removes the mapping for the 
+ specified key from this map
+ if present.)
++size():int
++values():Collection(V)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>112</x>
+      <y>231</y>
+      <w>121</w>
+      <h>83</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;
+</panel_attributes>
+    <additional_attributes>91;21;42;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>77</x>
+      <y>301</y>
+      <w>147</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+AbstractMap&lt;K,V&gt;
+--
++clone():protected Object
++toString():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>98</x>
+      <y>343</y>
+      <w>106</w>
+      <h>83</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>56;21;56;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>77</x>
+      <y>413</y>
+      <w>147</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+HashMap&lt;K,V&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>224</x>
+      <y>315</y>
+      <w>490</w>
+      <h>371</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+NavigableMap&lt;K,V&gt;
+--
++ceilingEntry(K key):Map.Entry&lt;K,V&gt;
++Map.Entry&lt;K,V&gt;:K
++descendingKeySet():NavigableSet&lt;K&gt;
++descendingMap():NavigableMap&lt;K,V&gt;
++firstEntry():Map.Entry&lt;K,V&gt;
++floorEntry(K key):Map.Entry&lt;K,V&gt;
++floorKey(K key):K
++headMap(K toKey):SortedMap&lt;K,V&gt;
++headMap(K toKey, boolean inclusive):NavigableMap&lt;K,V&gt;
++higherEntry(K key):Map.Entry&lt;K,V&gt;
++higherKey(K key):K
++lastEntry():Map.Entry&lt;K,V&gt; 	
++lowerEntry(K key):Map.Entry&lt;K,V&gt;
++lowerKey(K key):K
++navigableKeySet():NavigableSet&lt;K&gt;
++pollFirstEntry():Map.Entry&lt;K,V&gt;
+(Removes and returns a key-value mapping associated with the least key in this map,
+ or null if the map is empty.)
++pollLastEntry():Map.Entry&lt;K,V&gt;
++subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive):NavigableMap&lt;K,V&gt; 	
+(Returns a view of the portion of this map whose keys range from fromKey to toKey.)
++subMap(K fromKey, K toKey):SortedMap&lt;K,V&gt;
+(Returns a view of the portion of this map whose keys range from 
+fromKey, inclusive, to toKey, exclusive.)
++tailMap(K fromKey):SortedMap&lt;K,V&gt;
+Returns a view of the portion of this map whose keys are greater than or equal to fromKey.
++tailMap(K fromKey, boolean inclusive):NavigableMap&lt;K,V&gt;
+(Returns a view of the portion of this map whose keys are greater than 
+(or equal to, if inclusive is true) fromKey.)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>350</x>
+      <y>133</y>
+      <w>245</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+SortedMap&lt;K,V&gt;
+--
+comparator():Comparator&lt;? super K&gt;
+
+firstKey():K
+headMap(K toKey):SortedMap&lt;K,V&gt;
+
+lastKey():K
+subMap(K fromKey, K toKey):SortedMap&lt;K,V&gt;
+tailMap(K fromKey):SortedMap&lt;K,V&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>294</x>
+      <y>49</y>
+      <w>195</w>
+      <h>97</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;
+</panel_attributes>
+    <additional_attributes>21;21;182;84</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>413</x>
+      <y>224</y>
+      <w>106</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>56;21;56;91</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>763</x>
+      <y>588</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
+ TreeMap&lt;K,V&gt;
+--
++ceilingKey(K key):K
++clone():Object
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>693</x>
+      <y>434</y>
+      <w>153</w>
+      <h>167</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>21;21;140;154</additional_attributes>
+  </element>
+</diagram>
