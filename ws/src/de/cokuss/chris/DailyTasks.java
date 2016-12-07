@@ -17,7 +17,7 @@ public class DailyTasks {
 		myTasks.add(new Todos("Whats App auf Nachricht von Kerstin checken", 3));
 		myTasks.add(new Todos("Kaffe kochen", 2));
 		myTasks.add(new Todos("Dreck abkratzen", 3));
-		myTasks.add(new Todos("Java lehrnen", 4));
+		myTasks.add(new Todos("Java lernen", 4));
 		myTasks.add(new Todos("wieder hinlegen", 4));
 
 		System.out.println("Normale Interation\n");
