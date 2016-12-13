@@ -3,16 +3,17 @@ package RestaurantTraining.Basis;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import de.cokuss.chris.Todos;
+
 public class Rezept {
 	private String name;
 	private ArrayList<String> zubereitung;
-	private HashMap<Zutat, Double> zutaten;
+	private HashMap<Zutat, Double> bestandteil;
 
-	public Rezept(String name, ArrayList<String> zubereitung, HashMap<Zutat, Double> zutaten) {
-		super();
+	public Rezept(String name, ArrayList<String> zubereitung, HashMap<Zutat, Double> bestandteil) {
 		this.name = name;
 		this.zubereitung = zubereitung;
-		this.zutaten = zutaten;
+		this.bestandteil = bestandteil;
 	}
 
 	public String getName() {
@@ -24,8 +25,10 @@ public class Rezept {
 	}
 
 	public HashMap<Zutat, Double> getZutaten() {
-		return zutaten;
+		return bestandteil;
 	}
-
+	public String toString(){
+		return name;
+	}
 	
 }

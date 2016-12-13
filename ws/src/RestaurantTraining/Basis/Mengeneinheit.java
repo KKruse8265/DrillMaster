@@ -1,5 +1,5 @@
 package RestaurantTraining.Basis;
 
 public enum Mengeneinheit {
-	Gramm, Liter;
+	Kilogramm, Gramm, Milligramm, Liter, Milliliter;
 }
