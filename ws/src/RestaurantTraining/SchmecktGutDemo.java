@@ -37,8 +37,13 @@ public class SchmecktGutDemo {
 		//jedes Gericht hat Zutaten die im Rezept stehen
 		
 		// am Ende des Tages, wrd aus den verbrauchten Zutaten eine Einkaufsliste für den Wirt generiert
-		
+		createRzepte();
 
+	}
+
+	private static void createRzepte() {
+		
+		
 	}
 
 }
