@@ -1,10 +1,18 @@
 package RestaurantTraining.Basis;
-
+/**
+ * 
+ * @author Kerstin
+ * eine ganz normale deutsche Postadresse
+ * Version 01 nur mit getter und setter, Vollstaendiger und parameterloser Konstruktor sowie toString-Methode
+ */
 public class Adresse {
 	private String strasse;
 	private String hausnummer;
 	private String plz;
 	private String ort;
+	public Adresse(){
+		
+	}
 	public String getStrasse() {
 		return strasse;
 	}
