@@ -7,24 +7,24 @@ import java.util.Set;
 
 import RestaurantTraining.Basis.Mengeneinheit;
 import RestaurantTraining.Basis.Rezept;
+import RestaurantTraining.Basis.Tisch;
 import RestaurantTraining.Basis.Zutat;
 
 public class SchmecktGutDemo {
 
 	private static HashMap<String,Rezept> rezepte = new HashMap<String,Rezept>();
 	private static HashMap<String,Zutat> zutatenliste = new HashMap<>();
-	private static HashMap<Zutat, Double> bestandteil = new HashMap<>();
-
+	private static HashMap<Integer, Tisch> tischMap = new HashMap<>();
 	public static void main(String[] args) {
 		/*
 		 * Dieses Programm dient dem Erlernen von Java. Eine Praxisrelevanz ist
-		 * nicht beabsichtigt. Im imaginüren Restaurant "Schmeckt Gut" sollen
+		 * nicht beabsichtigt. Im imaginären Restaurant "Schmeckt Gut" sollen
 		 * die üblichen Abläufe informationstechnisch dargestellt werden.
 		 * 
 		 * Jeder kennt aus eigener Erfahrung einen Restaurantbesuch und was da
 		 * so passiert. Natürlich ist es in der Realität schwachsinnig einen
 		 * Gast erst instanzieren zu müssen, bevor man ihn zur Kenntnis nimmt,
-		 * aber wie gesagt Realitüt oder Computerunterstützung eines reellen
+		 * aber wie gesagt Realität oder Computerunterstützung eines reellen
 		 * Restaurants ist auch nicht das Ziel-
 		 * 
 		 */
@@ -53,6 +53,11 @@ public class SchmecktGutDemo {
 
 		// am Ende des Tages, wrd aus den verbrauchten Zutaten eine
 		// Einkaufsliste für den Wirt generiert
+		
+		
+		
+		//Tische mit einer Liste von Plätzen erzeugen
+		createTische(new Integer[] {3,4,4,6,4,4,5,5,2});
 		createZutaten();
 		createRezepte();
 		for(String rezeptName:rezepte.keySet()) {
@@ -60,6 +65,16 @@ public class SchmecktGutDemo {
 		}
 
 	}
+
+	
+
+	private static void createTische(Integer[] integers) {
+		for(int i = 0; i<integers.length; i++) {
+			tischMap.put(i+1, new Tisch(i+1, false, integers[i]));
+		}
+	}
+
+
 
 	private static void createZutaten() {
 		Zutat tmpZutat = new Zutat("Kartoffeln", Mengeneinheit.Kilogramm, 0.60);

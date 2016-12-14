@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="485.90876"
+     inkscape:cx="495.73725"
      inkscape:cy="355.64789"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -228,17 +228,17 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="17.142851"
-       y="360.93362"
+       x="732.33093"
+       y="892.27386"
        id="text3402"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3404"
-         x="17.142851"
-         y="360.93362">Speisekarte</tspan></text>
+         x="732.33093"
+         y="892.27386">Speisekarte</tspan></text>
     <g
        id="g3416"
-       transform="translate(-531.42858,-81.428571)">
+       transform="translate(183.75942,449.91167)">
       <text
          sodipodi:linespacing="125%"
          id="text3406"
@@ -272,17 +272,17 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="322.85712"
-       y="359.50507"
+       x="66.278297"
+       y="391.82996"
        id="text3423"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3425"
-         x="322.85712"
-         y="359.50507">Bestellung</tspan></text>
+         x="66.278297"
+         y="391.82996">Bestellung</tspan></text>
     <g
        id="g3437"
-       transform="translate(-115.71429,-42.857143)">
+       transform="translate(-364.29304,31.467738)">
       <text
          sodipodi:linespacing="125%"
          id="text3427"
@@ -357,5 +357,16 @@
          id="rect3456"
          style="opacity:0.2;fill:#0000be;fill-opacity:1;stroke:#1a1a1a;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="96.974709"
+       y="435.9458"
+       id="text3484"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3486"
+         x="96.974709"
+         y="435.9458">Tisch</tspan></text>
   </g>
 </svg>
