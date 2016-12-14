@@ -9,7 +9,9 @@ public class Tisch {
 	private boolean belegt;
 	private int plaetze;
 	// wie die Realisierung der Reservierung funzen soll ist mir noch völlig fraglich 
-
+	//Calendar.set(year + 1900, month, date, hrs, min)
+	// Calendar rightNow = Calendar.getInstance();
+	
 	public Tisch(int tischnummer, boolean belegt, int plaetze) {
 		this.tischnummer = tischnummer;
 		this.belegt = belegt;
