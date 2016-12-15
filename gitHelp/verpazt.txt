@@ -1,0 +1,8 @@
+//im Zusammenhang mit verbockten commits kann man über
+git commit --amend
+//die commitmeldung neu setzen
+
+//so kann man auch eine neue Datei mit zum letzten Commit hinzufügen
+git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
