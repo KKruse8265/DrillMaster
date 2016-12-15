@@ -6,7 +6,8 @@ public class Gericht {
 	private HashMap<Beruf, Zeitaufwand> arbeitsaufwand;
 	private String name;
 	private Rezept rezept;
-	//float ist mit Kanonen auf Spaßen geschossen: double reicht hier aus
+	//float ist mit Kanonen auf Spaï¿½en geschossen: double reicht hier aus
+	//CB war der Kommentar jetzt von mir ? Ist es nicht eher umgekehrt? (Deswegen mit Initialien)
 	private float preis;
 	private Kategorie kategorie;
 
