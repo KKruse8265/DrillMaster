@@ -1,0 +1,11 @@
+package restaurant.training.basis;
+/**
+ * 
+ * @author Kerstin
+ * die Gerichte werden in 4 Hauptkategorien unterteilt 
+ * anhand dieser Kategorien k�nnen die Bestellungen aufgeteilt werden und 
+ * ihre Abarbeitungsreihenfolge wird festgelegt
+ */
+public enum Kategorie {
+	Getraenk, Vorspeise, Hauptgang, Nachspeise;
+}
