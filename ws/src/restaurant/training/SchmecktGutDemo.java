@@ -57,7 +57,7 @@ public class SchmecktGutDemo {
 		// Einkaufsliste für den Wirt generiert
 
 		// Tische mit einer Liste von Plätzen erzeugen
-		createTische(new Integer[] { 3, 4, 4, 6, 4, 4, 5, 5, 2 });
+		createTische(new byte[] { 3, 4, 4, 6, 4, 4, 5, 5, 2 });
 		createZutaten();
 		createRezepte();
 		showKochbuch();
@@ -77,9 +77,9 @@ public class SchmecktGutDemo {
 		}
 	}
 
-	private static void createTische(Integer[] integers) {
+	private static void createTische(byte[] integers) {
 		for (int i = 0; i < integers.length; i++) {
-			tischMap.put(i + 1, new Tisch(i + 1, false, integers[i]));
+			tischMap.put(i + 1, new Tisch(i + 1,  integers[i]));
 		}
 	}
 
