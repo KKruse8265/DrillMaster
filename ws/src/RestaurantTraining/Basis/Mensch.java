@@ -1,5 +1,7 @@
 package RestaurantTraining.Basis;
-
+/**
+ * Basisklasse Mensch, die kann man sicher irgendwann mal zu was brauchen
+ */
 import java.util.Date;
 
 public class Mensch {

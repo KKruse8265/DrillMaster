@@ -22,7 +22,7 @@ public class Speisekarte {
 		while (gerichte.hasNext()) {
 			gericht = gerichte.next();
 			switch (gericht.getKategorie()) {
-			case Getränk:
+			case Getraenk:
 				resultGetraenke += gericht.toString() + "/n";
 				break;
 			case Hauptgang:

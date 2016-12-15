@@ -7,7 +7,10 @@ import de.cokuss.chris.Todos;
 
 public class Rezept {
 	private String name;
+	//besser wäre List<String> zubereitung= new ArrayList<>();
 	private ArrayList<String> zubereitung;
+	//Map<Zutat,Double> bestandteil= new HashMap<>();
+	//HashMap akzeptiert auch null-Werte 
 	private HashMap<Zutat, Double> bestandteil;
 
 	public Rezept(String name, ArrayList<String> zubereitung, HashMap<Zutat, Double> bestandteil) {
