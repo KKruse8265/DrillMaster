@@ -3,12 +3,13 @@ package restaurant.training.basis;
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Tisch {
 	private int tischnummer;
 	private boolean belegt;
 	private int plaetze;
-	private Map<Zeitraum,String> reservierungen = new HashMap()<>;
+	private Map<Zeitraum,String> reservierungen = new HashMap<>();
 	// wie die Realisierung der Reservierung funzen soll ist mir noch völlig
 	// fraglich
 	// Calendar.set(year + 1900, month, date, hrs, min)
