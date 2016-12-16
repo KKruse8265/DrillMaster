@@ -3,11 +3,9 @@ package restaurant.training.basis;
 import java.util.HashMap;
 
 public class Gericht {
-	private HashMap<Beruf, Zeitaufwand> arbeitsaufwand;
+	//Gegen Interface
 	private String name;
 	private Rezept rezept;
-	//float ist mit Kanonen auf Spa�en geschossen: double reicht hier aus
-	//CB war der Kommentar jetzt von mir ? Ist es nicht eher umgekehrt? (Deswegen mit Initialien)
 	private float preis;
 	private Kategorie kategorie;
 
@@ -35,9 +33,8 @@ public class Gericht {
 		return kategorie;
 	}
 
-	public Gericht(String name, HashMap<Beruf, Zeitaufwand> arbeitsaufwand, Rezept rezept, float preis, Kategorie kategorie) {
+	public Gericht(String name,  Rezept rezept, float preis, Kategorie kategorie) {
 		this.name = name;
-		this.arbeitsaufwand = arbeitsaufwand;
 		this.rezept = rezept;
 		this.preis = preis;
 		this.kategorie = kategorie;

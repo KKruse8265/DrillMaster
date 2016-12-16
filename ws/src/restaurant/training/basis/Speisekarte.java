@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Speisekarte {
-
+	//gegen Interface
 	private TreeSet<Gericht> speisekarte;
 
 	public Speisekarte(TreeSet<Gericht> speisekarte) {

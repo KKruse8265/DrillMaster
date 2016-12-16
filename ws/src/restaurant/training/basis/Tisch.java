@@ -31,7 +31,7 @@ public class Tisch {
 	public boolean istBelegt(){
 		return belegt;
 	}
-	public boolean istBelegbar(Date datum, Date uhrzeit){
+	public boolean istBelegbar(Zeitraum zeitraum){
 		//für die Reservierung ist es nötig Datum und Uhrzeit festzulegen zu dem die Reservierung möglich sein soll
 		return !belegt;
 	}

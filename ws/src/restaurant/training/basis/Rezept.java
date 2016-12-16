@@ -6,6 +6,7 @@ import java.util.HashMap;
 import de.cokuss.chris.Todos;
 
 public class Rezept {
+	//gegen Interfaces
 	private String name;
 	//besser w�re List<String> zubereitung= new ArrayList<>();
 	private ArrayList<String> zubereitung;
