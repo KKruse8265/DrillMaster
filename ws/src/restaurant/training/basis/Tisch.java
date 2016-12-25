@@ -2,19 +2,21 @@ package restaurant.training.basis;
 
 import java.sql.Date;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class Tisch {
 	private int tischnummer;
+	//ist der Tisch belegt wenn er zwar reserviert ist aber keiner daran sitzt
 	private boolean belegt=false;
 	private int plaetze;
+	private SortedSet<Reservierung> reservierungen = new TreeSet<>();
 	/*
 	 * Belegungsplan der Tische setzt eine Persitierung voraus
 	 * dazu müsste gecheckt werden ob am Wunschdatum zur Wunschzeit Tische mit gewünschten Plätzen frei sind
 	 * 
 	 */
-	private Map<Zeitraum, String> reservierungen = new HashMap<>();
+	//private Map<Zeitraum, String> reservierungen = new HashMap<>();
 	// wie die Realisierung der Reservierung funzen soll ist mir noch völlig
 	// fraglich
 	// Calendar.set(year + 1900, month, date, hrs, min)
@@ -31,20 +33,21 @@ public class Tisch {
 	public boolean istFrei(){
 		return !belegt;
 	}
-	public boolean istBelegbar(Zeitraum zeitraum){
+	public boolean istBelegbar(Reservierung zeitraum){
 		//für die Reservierung ist es nötig Datum und Uhrzeit festzulegen zu dem die Reservierung möglich sein soll
 		return !belegt;
 	}
 
-	public boolean reserviere(String name, Zeitraum zeitraum) {
+	public boolean reserviere(Reservierung reservierung) {
 		if (reservierungen.size() < 1) {
-			reservierungen.put(zeitraum, name);
+			//für diesen Tisch gibt es noch keine Reservierung, also kann eine angelegt werden
+			reservierungen.add(reservierung);
 			return true;
 		} else
+			
 			return false;
 	}
 	
-
 	public int getTischnummer() {
 		return tischnummer;
 	}

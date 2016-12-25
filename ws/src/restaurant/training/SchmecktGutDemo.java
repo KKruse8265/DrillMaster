@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -23,13 +24,11 @@ public class SchmecktGutDemo {
 
 	private static Map<String, Rezept> rezepte = new HashMap<String, Rezept>();
 	private static Map<String, Zutat> zutatenliste = new HashMap<>();
-	private static Map<Integer, Tisch> tischMap = new HashMap<>();
-	private static Speisekarte speisekarte;
+	//private static Map<Integer, Tisch> tischMap = new HashMap<>();
 	private static Set<Gericht> gerichte = new TreeSet<>();
-	private static HashMap<String, Zutat> zutatenliste = new HashMap<>();
 	//warum hier eine Map? Wofür steht der IntegerSchlüssel
 	//ein Tisch hat die Eigenschaften Tischnummer und Anzahl Plätze
-	private static HashMap<Integer, Tisch> tischMap = new HashMap<>();
+	//CB Keinen Plan warum, wahrscheilich erstmal nur kopiert von Rezepte und Co. 
 	private static List<Tisch> tische= new ArrayList<>(); 
 
 	public static void main(String[] args) {
@@ -62,7 +61,7 @@ public class SchmecktGutDemo {
 		// sind
 
 		// die Gäste wählen die Gerichte aus,
-		// Gäste können tische reservieren
+		// Gäste können Tische reservieren
 
 		// die Küche bereiten an Hand der Bestellung die Gerichte zu
 
@@ -82,7 +81,7 @@ public class SchmecktGutDemo {
 		belegeTischMit(3);
 		belegeTischMit(6);
 		belegeTischMit(3);
-		belegeTischMit(3);
+	//	belegeTischMit(3);
 		
 		
 //		createZutaten();
@@ -95,6 +94,9 @@ public class SchmecktGutDemo {
 		//erstmal ohne Datum und Zeit
 		List<Tisch>freieTische=new ArrayList<>();
 		for(Tisch t:tische){
+			// tolle Idee mit der List und dem Comperator
+			// sorum währe es noch ein bisschen fixer
+			// if(t.isFrei() && t.getPlaetze()>=plaetze)
 			if(t.getPlaetze()>=plaetze & t.istFrei()){
 				//am tisch sind genug Plätze vorhanden
 				freieTische.add(t);
@@ -120,6 +122,8 @@ public class SchmecktGutDemo {
 					return result;
 				}
 			});
+			//die Methode wirdBelegt() würde ich lieber belegen oder ähnlich nennen
+			//die Idee mit 
 			freieTische.get(0).wirdBelegt();
 			System.out.println(freieTische.get(0) + " ist mit " + plaetze + " Plätzen belegt");
 		}
@@ -164,7 +168,7 @@ public class SchmecktGutDemo {
 			tische.add(new Tisch(i+1,plaetze[i]));
 			//Wozu diese Map? In Tisch brauchen wir noch eine getTischnummer und getPlaetze
 			//gesetzt wird nur über den Konstruktor
-			tischMap.put(i + 1, new Tisch(i + 1,  plaetze[i]));
+	//		tischMap.put(i + 1, new Tisch(i + 1,  plaetze[i]));
 		}
 	}
 
