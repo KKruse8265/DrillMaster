@@ -1,11 +1,11 @@
 package restaurant.training.basis;
 
 import java.util.Iterator;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Speisekarte {
-	//gegen Interface
-	private TreeSet<Gericht> speisekarte;
+	private Set<Gericht> speisekarte = new TreeSet<>();
 
 	public Speisekarte(TreeSet<Gericht> speisekarte) {
 		this.speisekarte = speisekarte;

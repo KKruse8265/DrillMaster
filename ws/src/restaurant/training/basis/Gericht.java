@@ -2,8 +2,8 @@ package restaurant.training.basis;
 
 import java.util.HashMap;
 
-public class Gericht {
-	//Gegen Interface
+public class Gericht implements Comparable<Gericht>{
+	//Gegen Interface CB gegen welches? Kann weg, oder?
 	private String name;
 	private Rezept rezept;
 	private float preis;
@@ -43,6 +43,11 @@ public class Gericht {
 	public String toString() {
 		String result = name + " " + preis;
 		return result;
+	}
+
+	@Override
+	public int compareTo(Gericht o) {
+		return name.compareTo(o.name);
 	}
 	
 }

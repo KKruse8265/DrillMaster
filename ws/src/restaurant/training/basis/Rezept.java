@@ -2,17 +2,15 @@ package restaurant.training.basis;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import de.cokuss.chris.Todos;
 
 public class Rezept {
-	//gegen Interfaces
 	private String name;
-	//besser w�re List<String> zubereitung= new ArrayList<>();
-	private ArrayList<String> zubereitung;
-	//Map<Zutat,Double> bestandteil= new HashMap<>();
-	//HashMap akzeptiert auch null-Werte 
-	private HashMap<Zutat, Double> bestandteil;
+	private List<String> zubereitung= new ArrayList<>();
+	private Map<Zutat,Double> bestandteil= new HashMap<>();
 
 	public Rezept(String name, ArrayList<String> zubereitung, HashMap<Zutat, Double> bestandteil) {
 		this.name = name;
@@ -24,11 +22,11 @@ public class Rezept {
 		return name;
 	}
 
-	public ArrayList<String> getZubereitung() {
+	public List<String> getZubereitung() {
 		return zubereitung;
 	}
 
-	public HashMap<Zutat, Double> getZutaten() {
+	public Map<Zutat, Double> getZutaten() {
 		return bestandteil;
 	}
 	public String toString(){

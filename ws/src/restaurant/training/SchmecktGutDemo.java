@@ -4,18 +4,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
+import restaurant.training.basis.Gericht;
+import restaurant.training.basis.Kategorie;
 import restaurant.training.basis.Mengeneinheit;
 import restaurant.training.basis.Rezept;
+import restaurant.training.basis.Speisekarte;
 import restaurant.training.basis.Tisch;
 import restaurant.training.basis.Zutat;
 
 public class SchmecktGutDemo {
 
-	private static HashMap<String, Rezept> rezepte = new HashMap<String, Rezept>();
-	private static HashMap<String, Zutat> zutatenliste = new HashMap<>();
-	private static HashMap<Integer, Tisch> tischMap = new HashMap<>();
+	private static Map<String, Rezept> rezepte = new HashMap<String, Rezept>();
+	private static Map<String, Zutat> zutatenliste = new HashMap<>();
+	private static Map<Integer, Tisch> tischMap = new HashMap<>();
+	private static Speisekarte speisekarte;
+	private static Set<Gericht> gerichte = new TreeSet<>();
 
 	public static void main(String[] args) {
 		/*
@@ -60,9 +67,16 @@ public class SchmecktGutDemo {
 		createTische(new byte[] { 3, 4, 4, 6, 4, 4, 5, 5, 2 });
 		createZutaten();
 		createRezepte();
+		createSpeiseKarte();
 		showKochbuch();
 		showResturantBelegung();
 
+	}
+
+	private static void createSpeiseKarte() {
+		gerichte.add(new Gericht("Kartoffelsuppe", rezepte.get("Kartoffelsuppe"), 9.90f, Kategorie.Hauptgang));
+		gerichte.add(new Gericht("Schnitzel mit Kartoffeln und Rosenkohl",
+				rezepte.get("Schnitzel mit Kartoffeln und Rosenkohl"), 19.90f, Kategorie.Hauptgang));
 	}
 
 	private static void showResturantBelegung() {
@@ -72,14 +86,19 @@ public class SchmecktGutDemo {
 	}
 
 	private static void showKochbuch() {
+		System.out.println("Unser Kochbuch");
 		for (String rezeptName : rezepte.keySet()) {
-			System.out.println(rezepte.get(rezeptName));
+			Rezept rezept = rezepte.get(rezeptName);
+			System.out.println("\t" + rezept.getName());
+			for (Zutat t : rezept.getZutaten().keySet()) {
+				System.out.println("\t\t" + t.getName());
+			}
 		}
 	}
 
 	private static void createTische(byte[] integers) {
 		for (int i = 0; i < integers.length; i++) {
-			tischMap.put(i + 1, new Tisch(i + 1,  integers[i]));
+			tischMap.put(i + 1, new Tisch(i + 1, integers[i]));
 		}
 	}
 
@@ -104,6 +123,8 @@ public class SchmecktGutDemo {
 
 		rezept = new Rezept("Kartoffelsuppe", zubereitung, bestandteile);
 		rezepte.put(rezept.getName(), rezept);
+		zubereitung.clear();
+		bestandteile.clear();
 
 		bestandteile.put(zutatenliste.get("Kartoffeln"), 0.3);
 		bestandteile.put(zutatenliste.get("Schnitzel"), 0.5);
@@ -114,7 +135,8 @@ public class SchmecktGutDemo {
 
 		rezept = new Rezept("Schnitzel mit Kartoffeln und Rosenkohl", zubereitung, bestandteile);
 		rezepte.put(rezept.getName(), rezept);
-
+		zubereitung.clear();
+		bestandteile.clear();
 	}
 
 }

@@ -2,7 +2,7 @@ package restaurant.training.basis;
 /**
  * 
  * @author Kerstin
- * immaginaere Klasse f�r das Personal, aktuell brauchen wir sie noch nciht
+ * immaginaere Klasse für das Personal, aktuell brauchen wir sie noch nicht
  */
 public class Personal extends Mensch {
 
