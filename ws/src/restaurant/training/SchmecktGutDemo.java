@@ -1,10 +1,13 @@
 package restaurant.training;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -23,6 +26,11 @@ public class SchmecktGutDemo {
 	private static Map<Integer, Tisch> tischMap = new HashMap<>();
 	private static Speisekarte speisekarte;
 	private static Set<Gericht> gerichte = new TreeSet<>();
+	private static HashMap<String, Zutat> zutatenliste = new HashMap<>();
+	//warum hier eine Map? Wofür steht der IntegerSchlüssel
+	//ein Tisch hat die Eigenschaften Tischnummer und Anzahl Plätze
+	private static HashMap<Integer, Tisch> tischMap = new HashMap<>();
+	private static List<Tisch> tische= new ArrayList<>(); 
 
 	public static void main(String[] args) {
 		/*
@@ -60,17 +68,62 @@ public class SchmecktGutDemo {
 
 		// jedes Gericht hat Zutaten die im Rezept stehen
 
-		// am Ende des Tages, wrd aus den verbrauchten Zutaten eine
+		// am Ende des Tages, wird aus den verbrauchten Zutaten eine
 		// Einkaufsliste für den Wirt generiert
 
 		// Tische mit einer Liste von Plätzen erzeugen
 		createTische(new byte[] { 3, 4, 4, 6, 4, 4, 5, 5, 2 });
-		createZutaten();
-		createRezepte();
-		createSpeiseKarte();
-		showKochbuch();
+		//bisschen rumgespielt, es werden Tische für die übergebene Personenzahl belegt
+		belegeTischMit(3);
+		belegeTischMit(3);
+		belegeTischMit(3);
+		belegeTischMit(2);
+		belegeTischMit(4);
+		belegeTischMit(3);
+		belegeTischMit(6);
+		belegeTischMit(3);
+		belegeTischMit(3);
+		
+		
+//		createZutaten();
+//		createRezepte();
+//		showKochbuch();
 		showResturantBelegung();
 
+	}
+	private static void belegeTischMit(final int  plaetze){
+		//erstmal ohne Datum und Zeit
+		List<Tisch>freieTische=new ArrayList<>();
+		for(Tisch t:tische){
+			if(t.getPlaetze()>=plaetze & t.istFrei()){
+				//am tisch sind genug Plätze vorhanden
+				freieTische.add(t);
+			}
+		}
+		if (freieTische.size()==0){
+			System.out.println("kein Tisch mit genügend Plätzen frei");
+		} else{
+			Collections.sort(freieTische, new Comparator<Tisch>() {
+
+				@Override
+				public int compare(Tisch o1, Tisch o2) {
+					//hier wird der Tisch ausgewählt mit den kleinsten freibleibenden Plätzen
+					int result=0;
+					if((o1.getPlaetze()-plaetze) < (o2.getPlaetze()-plaetze)){
+						result=-1;
+					} else {
+						if((o1.getPlaetze()-plaetze) > (o2.getPlaetze()-plaetze)){
+							result=1;
+						}
+					}
+									
+					return result;
+				}
+			});
+			freieTische.get(0).wirdBelegt();
+			System.out.println(freieTische.get(0) + " ist mit " + plaetze + " Plätzen belegt");
+		}
+		
 	}
 
 	private static void createSpeiseKarte() {
@@ -80,9 +133,13 @@ public class SchmecktGutDemo {
 	}
 
 	private static void showResturantBelegung() {
-		for (int i = 1; i <= tischMap.size(); i++) {
-			System.out.println(tischMap.get(i).toString());
+		for(Tisch t:tische){
+			//Ausgabe der Tischbelegung
+			System.out.println(t);
 		}
+		//		for (int i = 1; i <= tischMap.size(); i++) {
+//			System.out.println(tischMap.get(i).toString());
+//		}
 	}
 
 	private static void showKochbuch() {
@@ -96,9 +153,18 @@ public class SchmecktGutDemo {
 		}
 	}
 
-	private static void createTische(byte[] integers) {
-		for (int i = 0; i < integers.length; i++) {
-			tischMap.put(i + 1, new Tisch(i + 1, integers[i]));
+	private static void createTische(byte[] plaetze) {
+		//auch ein array kann über eine for-each- Schleife abgearbeitet werden
+		//wäre mal interessant zu messen welche Konstruktion schneller ist
+		// für die Aufgabe bräuchte man ja einen counter für die Tischnummer
+		
+		for (int i = 0; i < plaetze.length; i++) {
+			//hier müsste stehen
+			//damit sind wirklich Tische erzeugt worden mit einer Tischnummer und den dazugehörigen Plätzen
+			tische.add(new Tisch(i+1,plaetze[i]));
+			//Wozu diese Map? In Tisch brauchen wir noch eine getTischnummer und getPlaetze
+			//gesetzt wird nur über den Konstruktor
+			tischMap.put(i + 1, new Tisch(i + 1,  plaetze[i]));
 		}
 	}
 

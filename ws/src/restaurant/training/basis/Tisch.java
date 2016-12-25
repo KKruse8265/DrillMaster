@@ -28,8 +28,8 @@ public class Tisch {
 		this.belegt=true;
 		//ist der Tisch belegt, können Bestellungen an diesem Tisch angenommen werden
 	}
-	public boolean istBelegt(){
-		return belegt;
+	public boolean istFrei(){
+		return !belegt;
 	}
 	public boolean istBelegbar(Zeitraum zeitraum){
 		//für die Reservierung ist es nötig Datum und Uhrzeit festzulegen zu dem die Reservierung möglich sein soll
@@ -43,13 +43,25 @@ public class Tisch {
 		} else
 			return false;
 	}
+	
 
+	public int getTischnummer() {
+		return tischnummer;
+	}
+	public int getPlaetze() {
+		return plaetze;
+	}
 	public String toString() {
-		String tmp;
-		if (belegt)
-			tmp = "Besetzt";
-		else
-			tmp = "Frei";
-		return "Tisch " + tischnummer + " " + tmp;
+//		String tmp;
+//		if (belegt)
+//			tmp = "Besetzt";
+//		else
+//			tmp = "Frei";
+		//so ist es schön kompakt - der Konditionaloperator muss in Klammern gesetzt werden, 
+		//da der Ausdruck von links nach rechts ausgewertet wird. Durch die Klammern wird erst der 
+		//komplette Ausdruck ausgewerte und liefert dann den nötigen String, der dann ausgegeben wird
+		// die hier anstehende Aufgabe "schreit" geradezu nach dem Konditionaloperator: in Abhängigkeit eines boolschen
+		//Wertes soll entweder der eine oder der andere Wert genutzt werden
+		return  "Tisch " + tischnummer + " " + (belegt? "Besetzt" : "Frei");
 	}
 }
