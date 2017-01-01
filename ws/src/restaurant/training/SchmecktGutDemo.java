@@ -95,9 +95,9 @@ public class SchmecktGutDemo {
 		List<Tisch>freieTische=new ArrayList<>();
 		for(Tisch t:tische){
 			// tolle Idee mit der List und dem Comperator
-			// sorum währe es noch ein bisschen fixer
-			// if(t.isFrei() && t.getPlaetze()>=plaetze)
-			if(t.getPlaetze()>=plaetze & t.istFrei()){
+			// sorum wäre es noch ein bisschen fixer
+			 if(t.istFrei() && t.getPlaetze()>=plaetze){
+			
 				//am tisch sind genug Plätze vorhanden
 				freieTische.add(t);
 			}
