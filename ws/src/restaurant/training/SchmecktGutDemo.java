@@ -123,7 +123,6 @@ public class SchmecktGutDemo {
 				}
 			});
 			//die Methode wirdBelegt() würde ich lieber belegen oder ähnlich nennen
-			//die Idee mit 
 			freieTische.get(0).wirdBelegt();
 			System.out.println(freieTische.get(0) + " ist mit " + plaetze + " Plätzen belegt");
 		}
