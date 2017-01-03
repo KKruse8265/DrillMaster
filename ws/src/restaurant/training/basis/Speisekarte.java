@@ -7,6 +7,14 @@ import java.util.TreeSet;
 public class Speisekarte {
 	private Set<Gericht> speisekarte = new TreeSet<>();
 
+	public boolean add(Gericht e) {
+		return speisekarte.add(e);
+	}
+
+	public int size() {
+		return speisekarte.size();
+	}
+
 	public Speisekarte(TreeSet<Gericht> speisekarte) {
 		this.speisekarte = speisekarte;
 	}

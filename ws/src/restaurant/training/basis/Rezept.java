@@ -17,11 +17,34 @@ public class Rezept {
 		this.zubereitung = zubereitung;
 		this.bestandteil = bestandteil;
 	}
+	
+
+	public Rezept(String name) {
+		this.name = name;
+	}
+
+
+	public boolean addZubereitung(String nanNehme) {
+		return zubereitung.add(nanNehme);
+	}
+
+	public Double addBestandteil(Zutat key, Double value) {
+		return bestandteil.put(key, value);
+	}
 
 	public String getName() {
 		return name;
 	}
 
+	public String toString() {
+		String result = name + "/n";
+		for(Zutat zutat: bestandteil.keySet()) {
+			result = result + zutat.getName() + " : ";
+			result = result + bestandteil.get(zutat).doubleValue();
+			result = result + zutat.getMengeneinheit() + "/n";
+		}
+		return result;
+	}
 	public List<String> getZubereitung() {
 		return zubereitung;
 	}
@@ -29,8 +52,6 @@ public class Rezept {
 	public Map<Zutat, Double> getZutaten() {
 		return bestandteil;
 	}
-	public String toString(){
-		return name;
-	}
+
 	
 }

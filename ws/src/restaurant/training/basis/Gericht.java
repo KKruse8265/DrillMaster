@@ -3,7 +3,6 @@ package restaurant.training.basis;
 import java.util.HashMap;
 
 public class Gericht implements Comparable<Gericht>{
-	//Gegen Interface CB gegen welches? Kann weg, oder?
 	private String name;
 	private Rezept rezept;
 	private float preis;

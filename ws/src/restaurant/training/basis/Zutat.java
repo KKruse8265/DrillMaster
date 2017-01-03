@@ -26,6 +26,5 @@ public class Zutat {
 	public Double getPreisProMengeneinheit() {
 		return preisProMengeneinheit;
 	}
-
 	
 }
