@@ -4,32 +4,31 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Restaurant {
 	private String name;
-	private Map<String, Rezept> rezepte = new HashMap<String, Rezept>();
-	private Map<String, Zutat> zutatenliste = new HashMap<>();
-	private Speisekarte speisekarte;
-	public boolean add(Gericht e) {
-		return speisekarte.add(e);
-	}
-
-	public boolean equals(Object obj) {
-		return speisekarte.equals(obj);
-	}
-
-	public int hashCode() {
-		return speisekarte.hashCode();
-	}
-
-	public int size() {
-		return speisekarte.size();
-	}
+	private Map<String, Rezept> kochbuch = new HashMap<String, Rezept>();
+	private Set<Zutat> lagerbestand = new HashSet<>();
+	private Speisekarte speisekarte = new Speisekarte();
+	//das Restaurant hat eine Speisekarte braucht eine getSpeisekarte
+	//und eine setSpeisekarte
+	
+	
 
 	public String toString() {
 		return speisekarte.toString();
+	}
+
+	public Speisekarte getSpeisekarte() {
+		return speisekarte;
+	}
+
+	public void setSpeisekarte(Speisekarte speisekarte) {
+		this.speisekarte = speisekarte;
 	}
 
 	private List<Tisch> tische = new ArrayList<>();
@@ -46,7 +45,7 @@ public class Restaurant {
 	}
 
 	public void addZutat(Zutat zutat) {
-		zutatenliste.put(zutat.getName(), zutat);
+		lagerbestand.add(zutat);
 	}
 	
 	public String getName() {
@@ -54,11 +53,11 @@ public class Restaurant {
 	}
 
 	public void addRezept(Rezept rezept) {
-		rezepte.put(rezept.getName(), rezept);
+		kochbuch.put(rezept.getName(), rezept);
 	}
 
 	public Rezept getRezept(Object name) {
-		return rezepte.get(name);
+		return kochbuch.get(name);
 	}
 
 	public boolean addGericht(Gericht gericht) {
@@ -67,8 +66,8 @@ public class Restaurant {
 
 	public void showKochbuch() {
 		System.out.println("Unser Kochbuch");
-		for (String rezeptName : rezepte.keySet()) {
-			Rezept rezept = rezepte.get(rezeptName);
+		for (String rezeptName : kochbuch.keySet()) {
+			Rezept rezept = kochbuch.get(rezeptName);
 			System.out.println("\t" + rezept.getName());
 			for (Zutat t : rezept.getZutaten().keySet()) {
 				System.out.println("\t\t" + t.getName());

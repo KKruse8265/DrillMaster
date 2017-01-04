@@ -18,6 +18,9 @@ public class Speisekarte {
 	public Speisekarte(TreeSet<Gericht> speisekarte) {
 		this.speisekarte = speisekarte;
 	}
+	public Speisekarte(){
+		
+	}
 
 	public String toString() {
 		String result = "";

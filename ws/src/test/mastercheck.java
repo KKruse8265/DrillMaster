@@ -90,11 +90,11 @@ public class mastercheck {
 	}
 
 	private static void createZutaten() {
-		Zutat tmpZutat = new Zutat("Kartoffeln", Mengeneinheit.Kilogramm, 0.60);
+		Zutat tmpZutat = new Zutat("Kartoffeln", Mengeneinheit.Kilogramm, 0.60, 20);
 		zutatenliste.put(tmpZutat.getName(), tmpZutat);
-		tmpZutat = new Zutat("Schnitzel", Mengeneinheit.Kilogramm, 4.60);
+		tmpZutat = new Zutat("Schnitzel", Mengeneinheit.Kilogramm, 4.60,5);
 		zutatenliste.put(tmpZutat.getName(), tmpZutat);
-		tmpZutat = new Zutat("Rosenkohl", Mengeneinheit.Kilogramm, 2.30);
+		tmpZutat = new Zutat("Rosenkohl", Mengeneinheit.Kilogramm, 2.30,5);
 		zutatenliste.put(tmpZutat.getName(), tmpZutat);
 
 	}

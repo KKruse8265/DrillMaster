@@ -51,9 +51,9 @@ public class SchmecktGutDemo {
 	}
 
 	private static void createZutaten() {
-		unsaNeues.addZutat(new Zutat("Kartoffeln", Mengeneinheit.Kilogramm, 0.60));
-		unsaNeues.addZutat(new Zutat("Schnitzel", Mengeneinheit.Kilogramm, 4.60));
-		unsaNeues.addZutat(new Zutat("Rosenkohl", Mengeneinheit.Kilogramm, 2.30));
+		unsaNeues.addZutat(new Zutat("Kartoffeln", Mengeneinheit.Kilogramm, 0.60, 20));
+		unsaNeues.addZutat(new Zutat("Schnitzel", Mengeneinheit.Kilogramm, 4.60, 5));
+		unsaNeues.addZutat(new Zutat("Rosenkohl", Mengeneinheit.Kilogramm, 2.30, 5));
 
 	}
 
